@@ -4,7 +4,7 @@ const cors=require('cors');
 const app=express();
 app.use(express.json());
 app.use(express.urlencoded({extended:false}));
-require('dotenv').config();
+
 app.use(helmet());
 app.use(cors("*"));
 const eventRouter=require("./routes/eventRouter");
