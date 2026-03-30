@@ -11,5 +11,9 @@ module.exports = {
         acquire: 60000,
         idle: 20000
     },
-    logging: false
+    logging: false,
+     dialectOptions: {
+    enableKeepAlive: true,
+    keepAliveInitialDelayMs: 0
+  }
 };
