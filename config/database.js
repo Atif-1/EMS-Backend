@@ -1,14 +1,14 @@
 require('dotenv').config();
 
 // Debug: Log which config is being used
-console.log('DATABASE_URL:', process.env.DATABASE_URL ? 'Set' : 'Not set');
+console.log('MYSQL_URL:', process.env.MYSQL_URL ? 'Set' : 'Not set');
 console.log('NODE_ENV:', process.env.NODE_ENV);
 
-if (process.env.DATABASE_URL) {
+if (process.env.MYSQL_URL) {
   // Railway production - parse the connection string
-  console.log('Using Railway DATABASE_URL');
+  console.log('Using Railway MYSQL_URL');
   
-  const url = new URL(process.env.DATABASE_URL);
+  const url = new URL(process.env.MYSQL_URL);
   
   module.exports = {
     username: url.username,
