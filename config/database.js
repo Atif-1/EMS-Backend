@@ -1,4 +1,4 @@
-require('dotenv').config();
+
 
 // Debug: Log which config is being used
 console.log('=== ENVIRONMENT VARIABLES ===');
