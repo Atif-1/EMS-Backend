@@ -4,7 +4,6 @@ require('dotenv').config();
 console.log('MYSQL_URL:', process.env.MYSQL_URL ? 'Set' : 'Not set');
 console.log('NODE_ENV:', process.env.NODE_ENV);
 
-if (process.env.MYSQL_URL) {
   // Railway production - parse the connection string
   console.log('Using Railway MYSQL_URL');
   
@@ -30,23 +29,3 @@ if (process.env.MYSQL_URL) {
       connectTimeout: 10000
     }
   };
-} else {
-  // Local development
-  console.log('Using local environment variables');
-  
-  module.exports = {
-    username: process.env.DB_USER || 'root',
-    password: process.env.DB_PASS,
-    database: process.env.DB_NAME,
-    host: process.env.DB_HOST || 'localhost',
-    port: process.env.DB_PORT || 3306,
-    dialect: 'mysql',
-    pool: {
-      max: 20,
-      min: 5,
-      acquire: 60000,
-      idle: 20000
-    },
-    logging: false
-  };
-}
