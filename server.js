@@ -6,7 +6,7 @@ const PORT = process.env.PORT;
   try {
     app.listen(PORT, () => console.log(`Server running on ${PORT}`));
   } catch (err) {
-    console.error('DB connection failed', err);
+    console.error('Server failed to start', err);
     process.exit(1);
   }
 })();
